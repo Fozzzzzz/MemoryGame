@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Memory Game</h1>
+    <div class="game-board" id="gameBoard">
+        <div class="square" id="square1"></div>
+        <div class="square" id="square2"></div>
+        <div class="square" id="square3"></div>
+        <div class="square" id="square4"></div>
+        <div class="square" id="square5"></div>
+        <div class="square" id="square6"></div>
+        <div class="square" id="square7"></div>
+        <div class="square" id="square8"></div>
+        <div class="square" id="square9"></div>
+        <div class="square" id="square10"></div>
+        <div class="square" id="square11"></div>
+        <div class="square" id="square12"></div>
+<!--         <div class="square" id="square13"></div>
+        <div class="square" id="square14"></div>
+        <div class="square" id="square15"></div>
+        <div class="square" id="square16"></div> -->
+    </div>
+    <div id="scoreboard">
+<!--             <h2>遊戲成績</h2> -->
+            <table>
+                <tr>
+                    <th scope="col">Level</th>
+                    <th scope="col">Stage 1</th>
+                    <th scope="col">Stage 2</th>
+                    <th scope="col">Stage 3</th>
+                </tr>
+                <tr>
+                    <td id="4levelDisplay">4</td>
+                    <td id="4level1Status"> </td>
+                    <td id="4level2Status"> </td>
+                    <td id="4level3Status"> </td>
+                </tr>
+                <tr>  
+                    <td id="5levelDisplay">5</td>
+                    <td id="5level1Status"> </td>
+                    <td id="5level2Status"> </td>
+                    <td id="5level3Status"> </td>
+                </tr>
+                <tr>  
+                    <td id="6levelDisplay">6</td>
+                    <td id="6level1Status"> </td>
+                    <td id="6level2Status"> </td>
+                    <td id="6level3Status"> </td>
+                </tr>
+               <tr>
+                    <td id="7levelDisplay">7</td>
+                    <td id="7level1Status"> </td>
+                    <td id="7level2Status"> </td>
+                    <td id="7level3Status"> </td>
+                </tr>
+                <tr>  
+                    <td id="8levelDisplay">8</td>
+                    <td id="8level1Status"> </td>
+                    <td id="8level2Status"> </td>
+                    <td id="8level3Status"> </td>
+                </tr>
+                <tr>  
+                    <td id="9levelDisplay">9</td>
+                    <td id="9level1Status"> </td>
+                    <td id="9level2Status"> </td>
+                    <td id="9level3Status"> </td>
+                </tr>
+            </table>
+    <div id="buttonContainer">
+        <button id="resetInputButton">清除輸入</button>
+        <button id="confirmButton">確認答案</button>
+    </div>
+    <div id="buttonContainer2"></div>
+        <button id="startButton">正序開始</button>
+        <button id="startButtonREV">倒序開始</button>
+    </div>
+    <!-- <button id="startButton">正序開始</button>
+    <button id="startButtonREV">倒序開始</button> -->
+    <h2>1. 亮燈結束後，等色塊變成藍色在開始回答，並在回答結束後按「確認答案」</h2>
+    <h2>2. 回答中要修正輸入，請先按「清除輸入」後，再重新輸入順序</h2>
+    <h2>3. 欲在中途重新開始，請確保當前亮燈已結束</h2>
+    <!-- 添加音效 -->
+    <audio id="beep" src="beep.mp3"></audio>
+    <script src="script.js"></script>
+</body>
+</html>
