@@ -6,7 +6,7 @@ const sounds = document.getElementById('beep');
 // const originalColor = squares.style.backgroundColor;
 let sequence = [];
 let playerSequence = [];
-let level = 3;
+let level = 2;
 let currentLevelRepeats = -1; // 記錄當前 level 重複次數
 const maxRepeats = 3; // 每個 level 的最大重複次數
 let extra = 0;
@@ -103,13 +103,13 @@ function playSequence() {
                 sequence.reverse();
             }
             if(level+1===7){
-                extra = level * 100
+                extra = level * 150
             }
             clearInterval(interval);
             setTimeout(() => {
                 sounds.play();
                 squares.forEach(square => {
-                    changeSquareColor(square); // 随机改变每个方块的颜色
+                    changeSquareColorNormal(square); // 變回灰色
                 });
                 canClick = true; // 所有亮燈播放完畢後才允許點擊
             }, 1500+extra);
@@ -190,9 +190,13 @@ confirmButton.addEventListener('click', () => {
     if (playerSequence.length === sequence.length) {
         checkPlayerInput(); // 只有玩家輸入完畢後才檢查答案
     } else {
-        alert('尚未完成輸入！');
+        // alert('尚未完成輸入！');
+        const statusCell = document.getElementById((level + 1) + 'level' + (currentLevelRepeats + 1) + 'Status');
+        statusCell.textContent = 'X';
+        nextLevel(); // 無論正確與否，進入下一關
     }
 });
+
 
 // 開始下一關
 // function nextLevel() {
@@ -248,7 +252,7 @@ function resetGame() {
     }
     sequence = [];
     playerSequence = [];
-    level = 3;
+    level = 2;
     currentLevelRepeats = -1;
     canClick = false;
 }
